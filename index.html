@@ -2,370 +2,429 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Earth Moving Equipment Rental Services Near Coimbatore</title>
-<meta name="description" content="Best earthmoving equipment rental services near Coimbatore, offering JCBs, excavators, rock breakers, road rollers, & tippers for rent at affordable rates." />
-<link href="assets/css/bootstrap.css" rel="stylesheet" />
-<link href="assets/css/style.css" rel="stylesheet" />
-<link href="assets/css/fontawesome-all.css" rel="stylesheet" />
-<link href="assets/css/animate.css" rel="stylesheet" />
-<link href="assets/css/custom-animate.css" rel="stylesheet" />
-<link href="assets/css/flaticon.css" rel="stylesheet" />
-<link href="assets/css/stroke-gap.css" rel="stylesheet" />
-<link href="assets/css/owl.css" rel="stylesheet" />
-<link href="assets/css/jquery-ui.css" rel="stylesheet" />
-<link href="assets/css/jquery.fancybox.min.css" rel="stylesheet" />
-<link href="assets/css/scrollbar.css" rel="stylesheet" />
-<link href="assets/css/hover.css" rel="stylesheet" />
-<link href="assets/css/jquery.touchspin.css" rel="stylesheet" />
-<link href="assets/css/botstrap-select.min.css" rel="stylesheet" />
-<link href="assets/css/swiper.min.css" rel="stylesheet" />
-<link href="assets/css/rtl.css" rel="stylesheet" />
-<link href="assets/css/responsive.css" rel="stylesheet" />
-<link href="assets/css/color-2.css" rel="stylesheet" />
-
-<link as="font" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Yantramanav:wght@300;400;500;700;900&display=swap" rel="preconnect" />
-<link rel="shortcut icon" href="assets/images/favicon-sna.png" type="image/x-icon" />
-<link rel="icon" href="assets/images/favicon-sna.png" type="image/x-icon" />
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PL776B4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
+<style>
+  /* Reset and base */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body, html { font-family: 'Poppins', sans-serif; background: #f9f9f9; }
+  a { text-decoration: none; color: #333; }
+  ul { list-style: none; }
+  
+  /* Header */
+  header {
+    background: #1B2A49; color: white; position: sticky; top: 0; z-index: 1000;
+  }
+  .header-top {
+    background: #263B67; font-size: 0.9em; text-align: right; padding: 5px 20px;
+  }
+  .header-top a { color: #FFD700; }
+  
+  .header-upper {
+    display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;
+  }
+  .logo img {
+    height: 60px;
+  }
+  nav {
+    flex-grow: 1;
+    margin-left: 40px;
+  }
+  nav ul {
+    display: flex; gap: 20px; justify-content: flex-end;
+  }
+  nav ul li a {
+    color: white; padding: 10px 15px; display: block;
+    font-weight: 600; transition: background 0.3s ease;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    background: #4caf50;
+    border-radius: 4px;
+  }
+  
+  /* Mobile nav */
+  .mobile-nav-toggler {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background: #1B2A49;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 200px;
+      display: none;
+      border-radius: 0 0 0 8px;
+    }
+    nav ul.show {
+      display: flex;
+    }
+    .mobile-nav-toggler {
+      display: block;
+    }
+  }
+  
+  /* Page title section */
+  .page-title {
+    background: url('https://www.snaearthmover.com/assets/images/sna-earth-movers-breadcrumb.webp') center/cover no-repeat;
+    color: white; padding: 80px 20px 50px; text-align: center; position: relative;
+  }
+  .page-title h1 {
+    font-size: 2.8rem; font-weight: 700; text-shadow: 1px 1px 7px rgba(0,0,0,0.7);
+    margin-bottom: 15px;
+  }
+  .bread-crumb {
+    display: inline-flex; gap: 10px; font-weight: 600;
+  }
+  .bread-crumb a {
+    color: #f0f0f0;
+  }
+  .bread-crumb li::after {
+    content: '>';
+    margin-left: 10px;
+    color: #ccc;
+  }
+  .bread-crumb li:last-child::after {
+    content: '';
+  }
+  
+  /* Services Section */
+  .services-section {
+    max-width: 1200px; margin: 50px auto; padding: 0 20px;
+  }
+  .services-section .sec-title {
+    text-align: center; margin-bottom: 40px;
+  }
+  .services-section .sub-title {
+    color: #4caf50; font-weight: 600; margin-bottom: 10px; font-size: 1.1rem;
+  }
+  .services-section h2 {
+    font-size: 2.4rem; font-weight: 700;
+  }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 30px;
+  }
+  .service-block {
+    background: white; box-shadow: 0 3px 8px rgb(0 0 0 / 0.12);
+    border-radius: 8px; overflow: hidden; position: relative; cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .service-block:hover {
+    transform: translateY(-5px);
+  }
+  .service-block img {
+    width: 100%; height: 200px; object-fit: cover;
+  }
+  .service-content {
+    padding: 15px 20px;
+  }
+  .service-content h4 {
+    margin-bottom: 10px; color: #1B2A49; font-weight: 700;
+  }
+  .service-content p {
+    color: #555; font-size: 0.95rem; line-height: 1.4;
+  }
+  .service-content a.readmore-link {
+    color: #4caf50; font-weight: 600; display: inline-block; margin-top: 10px;
+  }
+  
+  /* Overlay on service cards */
+  .service-block .overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(76,175,80,0.85);
+    color: white; opacity: 0; transition: opacity 0.3s ease;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 20px;
+    text-align: center;
+  }
+  .service-block:hover .overlay {
+    opacity: 1;
+  }
+  .overlay h4 {
+    margin-bottom: 10px; font-size: 1.5rem; font-weight: 700;
+  }
+  .overlay p {
+    font-size: 1rem;
+  }
+  .overlay a.readmore-link {
+    margin-top: 15px;
+    color: #fff; font-weight: 600; border: 1px solid white; padding: 6px 15px;
+    border-radius: 4px;
+  }
+  .overlay a.readmore-link:hover {
+    background: white; color: #4caf50;
+  }
+  
+  /* Footer */
+  footer {
+    background: #1B2A49; color: white; padding: 40px 20px 20px;
+    font-size: 0.9rem;
+  }
+  footer .footer-widgets {
+    max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 30px;
+    justify-content: space-between;
+  }
+  footer .widget {
+    flex: 1 1 200px;
+  }
+  footer .widget h5 {
+    color: #4caf50; margin-bottom: 15px; font-weight: 700;
+  }
+  footer a {
+    color: white;
+  }
+  footer ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  footer ul li {
+    margin-bottom: 8px;
+  }
+  footer .social-icons ul {
+    display: flex; gap: 15px;
+    padding-left: 0;
+  }
+  footer .social-icons ul li a {
+    font-size: 1.4rem;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  footer .social-icons ul li a:hover {
+    color: #4caf50;
+  }
+  footer .copyright {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid #4caf50;
+    padding-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  /* Contact form section */
+  .contact-section {
+    max-width: 900px; background: white; margin: 50px auto;
+    padding: 30px 40px; border-radius: 8px;
+    box-shadow: 0 3px 12px rgb(0 0 0 / 0.1);
+  }
+  .contact-section h3 {
+    text-align: center; color: #1B2A49; margin-bottom: 25px; font-weight: 700;
+  }
+  .contact-section form {
+    display: grid; gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-section form input {
+    padding: 12px 15px; border: 1px solid #ccc; border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .contact-section form button {
+    grid-column: span 2;
+    padding: 15px;
+    background: #4caf50;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  .contact-section form button:hover {
+    background: #388e3c;
+  }
+  @media (max-width: 600px) {
+    .contact-section form {
+      grid-template-columns: 1fr;
+    }
+    nav ul {
+      width: 100%;
+      position: relative;
+      top: 0;
+      flex-direction: column;
+    }
+  }
+  
+  /* Scroll to top button */
+  #scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+  #scrollToTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
 </head>
 <body>
-<div class="page-wrapper">
 
-  <!-- Header -->
-  <header class="main-header header-style-two">
-    <!-- Header Top -->
-    <div class="header-top">
-      <div class="auto-container">
-        <div class="inner-container">
-          <div class="right-column">
-            <div class="phone-number"><i class="flaticon-calling"></i><b><a href="tel:+919629408999">+91 96294 08999</a></b></div>
-          </div>
-        </div>
+<header>
+  <div class="header-top">
+    <div>Call us: <a href="tel:+919629408999">+91 96294 08999</a></div>
+  </div>
+  <div class="header-upper">
+    <div class="logo">
+      <a href="#"><img src="https://www.snaearthmover.com/assets/images/sna-logo.webp" alt="SNA Earth Movers" style="height:60px;" /></a>
+    </div>
+    <div class="mobile-nav-toggler" id="navToggle">&#9776;</div>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#" style="background:#4caf50; color: white; border-radius: 4px;">Enquiry</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-title">
+  <h1>Top Best Earth Movers Rental Services in Coimbatore</h1>
+  <ul class="bread-crumb">
+    <li><a href="#">Home</a></li>
+    <li>Services</li>
+  </ul>
+</section>
+
+<section class="services-section">
+  <div class="sec-title">
+    <div class="sub-title">Our Services</div>
+    <h2>Best Earth Movers Hire Services Near Coimbatore</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-block">
+      <img src="https://www.snaearthmover.com/assets/images/jcb.webp" alt="JCB" />
+      <div class="service-content">
+        <h4>JCB</h4>
+        <p>SNA Earth Movers provides JCB machines on a rental basis at affordable rates...</p>
+        <a href="#" class="readmore-link">JCB</a>
+      </div>
+      <div class="overlay">
+        <h4>JCB</h4>
+        <p>SNA Earth Movers provides JCB machines on a rental basis at affordable rates...</p>
+        <a href="#" class="readmore-link">JCB</a>
       </div>
     </div>
 
-    <!-- Header Upper -->
-    <div class="header-upper">
-      <div class="auto-container">
-        <div class="inner-container">
-          <!--Logo-->
-          <div class="logo-box">
-            <div class="logo"><a href="index.php"><img src="assets/images/sna-logo.webp" alt="SNA" title="SNA" height="90" width="220" /></a></div>
-          </div>
-
-          <div class="right-column">
-            <!--Nav Box-->
-            <div class="nav-outer">
-              <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
-
-              <!-- Main Menu -->
-              <nav class="main-menu navbar-expand-md navbar-light">
-                <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                  <ul class="navigation">
-                    <li class="nav-enqe-menu"><a class="nav-link" href="index.php" title="Home">Home</a></li>
-                    <li class="nav-enqe-menu"><a class="nav-link" href="top-earth-moving-contractors-coimbatore.php" title="About Us">About Us</a></li>
-                    <li class="nav-enqe-menu"><a class="nav-link activee" href="best-earth-movers-services-coimbatore.php" title="Services">Services</a></li>
-                    <li class="nav-enqe-menu"><a class="nav-link" href="jcb-excavator-rock-breakers-rent-questions.php" title="FAQ">FAQ</a></li>
-                    <li class="nav-enqe-menu"><a class="nav-link" href="earth-movers-equipment-rentals.php" title="Contact Us">Contact Us</a></li>
-                    <li class="nav-enqe-button"><a href="earth-work-service-enquiry.php">Enquiry</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-          </div>
-
-        </div>
+    <div class="service-block">
+      <img src="https://www.snaearthmover.com/assets/images/jcb-breaker.webp" alt="JCB Breaker" />
+      <div class="service-content">
+        <h4>JCB Breaker</h4>
+        <p>SNA Earth Movers offers high-performance heavy-duty hydraulic breaker machines for rentals at affordable rates...</p>
+        <a href="#" class="readmore-link">JCB Breaker</a>
+      </div>
+      <div class="overlay">
+        <h4>JCB Breaker</h4>
+        <p>SNA Earth Movers offers high-performance heavy-duty hydraulic breaker machines for rentals at affordable rates...</p>
+        <a href="#" class="readmore-link">JCB Breaker</a>
       </div>
     </div>
 
-    <!-- Sticky Header -->
-    <div class="sticky-header">
-      <div class="header-upper">
-        <div class="auto-container">
-          <div class="inner-container">
-            <div class="logo-box">
-              <div class="logo"><a href="index.php"><img src="assets/images/sna-logo.webp" class="s-logo" alt="SNA" title="SNA" height="90" width="220" /></a></div>
-            </div>
-            <div class="right-column">
-              <div class="nav-outer">
-                <div class="mobile-nav-toggler"><img src="assets/images/icons/icon-bar-2.png" alt="" /></div>
-                <nav class="main-menu navbar-expand-md navbar-light"></nav>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="service-block">
+      <img src="https://www.snaearthmover.com/assets/images/hitachi-excavator.webp" alt="Hitachi Excavator" />
+      <div class="service-content">
+        <h4>Hitachi Excavator</h4>
+        <p>We provide Tata Hitachi excavators that are more powerful and have improved hydraulics for better performance...</p>
+        <a href="#" class="readmore-link">Hitachi Excavator</a>
       </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-      <div class="menu-backdrop"></div>
-      <div class="close-btn"><span class="icon flaticon-remove"></span></div>
-      <nav class="menu-box">
-        <div class="nav-logo"><a href="index.php"><img src="assets/images/sna-logo.webp" alt="" height="15" width="75" /></a></div>
-        <div class="menu-outer"><!--Here Menu Will Come Automatically Via Javascript--></div>
-        <div class="social-links">
-          <ul class="clearfix">
-            <li><a href="#" title="twitter"><span class="fab fa-twitter"></span></a></li>
-            <li><a href="#" title="facebook"><span class="fab fa-facebook-square"></span></a></li>
-            <li><a href="#" title="pinterest"><span class="fab fa-pinterest-p"></span></a></li>
-            <li><a href="#" title="instagram"><span class="fab fa-instagram"></span></a></li>
-            <li><a href="#" title="youtube"><span class="fab fa-youtube"></span></a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Page Title Section -->
-  <section class="page-title" style="background-image: url(assets/images/sna-earth-movers-breadcrumb.webp);">
-    <div class="background-text">
-      <div data-parallax='{"x": 100}'></div>
-    </div>
-    <div class="auto-container">
-      <div class="content-box">
-        <div class="content-wrapper">
-          <div class="title"><h1>Top Best Earth Movers Rental Services in Coimbatore</h1></div>
-          <ul class="bread-crumb clearfix">
-            <li><a href="index.php" title="Home">Home</a></li>
-            <li><a href="#" title="Services">Services</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section class="services-section">
-    <div class="auto-container">
-      <div class="sec-title text-center">
-        <div class="sub-title">Our Services</div>
-        <h2>Best Earth Movers Hire Services Near Coimbatore</h2>
-      </div>
-      <div class="row">
-        <!-- Service Block Example -->
-        <div class="col-lg-4 service-block">
-          <div class="inner-box wow fadeInUp" data-wow-duration="1500ms">
-            <div class="image-box">
-              <img src="assets/images/jcb.webp" alt="jcb" title="jcb" width="370" height="300" loading="lazy" />
-            </div>
-            <div class="lower-content">
-              <div class="text">SNA Earth Movers provides JCB machines on a rental basis at affordable rates...</div>
-              <div class="link"><a href="jcb-rental-services-coimbatore.php" class="readmore-link">JCB</a></div>
-            </div>
-            <div class="overlay" style="background-image: url(assets/images/jcb.webp);">
-              <div>
-                <div class="content">
-                  <div class="icon"><span><img src="assets/images/icon/jcb.png" title="JCB" /></span></div>
-                  <h4>JCB</h4>
-                </div>
-                <div class="text p-25">SNA Earth Movers provides JCB machines on a rental basis at affordable rates...</div>
-                <div class="link"><a href="jcb-rental-services-coimbatore.php" class="readmore-link">JCB</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- You can add similar service blocks here for others (JCB Breaker, Hitachi Excavator, etc.) -->
-        <!-- For brevity, only one is fully shown -->
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Talk To Our Experts Section -->
-  <div class="sigma_footer-newsletter">
-    <div class="container">
-      <div class="sigma_cta style-9">
-        <div class="row align-items-center">
-          <div class="col-lg-2">
-            <div class="sigma_cta-content d-block d-sm-flex align-items-center">
-              <i class="flaticon-calling"></i>
-              <h5 class="mt-3 mt-sm-0">Talk To Our Experts</h5>
-            </div>
-          </div>
-          <div class="col-lg-10">
-            <form method="post" action="../snaxcodefix-mail.php">
-              <div class="row">
-                <input name="firstname" type="text" id="firstname" class="hide-robot" />
-                <div class="col-lg-3">
-                  <div class="input-group">
-                    <input type="text" name="xnamesna" placeholder="Enter Your Name" />
-                  </div>
-                </div>
-                <div class="col-lg-3">
-                  <div class="input-group">
-                    <input type="email" name="xemailsna" placeholder="Enter Your Email" />
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="input-group">
-                    <input type="text" name="xphonesna" maxlength="10" placeholder="Enter Phone Number" />
-                    <div class="input-group-append mobile-no">
-                      <button type="submit" name="footer-form" class="secondary btn-sub" title="Get A Callback">Get A Callback</button>
-                    </div>
-                    <div class="input-group-append mobile-view">
-                      <button type="submit" name="footer-form" class="secondary btn-sub" title="Get A Callback">Get A Callback</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
+      <div class="overlay">
+        <h4>Hitachi Excavator</h4>
+        <p>We provide Tata Hitachi excavators that are more powerful and have improved hydraulics for better performance...</p>
+        <a href="#" class="readmore-link">Hitachi Excavator</a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="sigma_footer style-5 sigma_footer-dark has-newsletter">
-    <div class="sigma_footer-middle">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="sigma_footer-widget">
-              <div class="sigma_footer-logo mb-4">
-                <img src="assets/images/sna-logo.webp" alt="sna" title="sna" height="90" width="220" />
-              </div>
-              <ul class="sigma_social-icons mt-4 justify-content-start">
-                <li><a href="#" title="facebook"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#" title="instagram"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-2 col-sm-3">
-            <div class="sigma_footer-widget">
-              <h5 class="widget-title">Quick Links</h5>
-              <ul class="sigma_footer-links">
-                <li><a href="index.php" title="Home">Home</a></li>
-                <li><a href="top-earth-moving-contractors-coimbatore.php" title="About Us">About Us</a></li>
-                <li><a href="best-earth-movers-services-coimbatore.php" title="Services">Services</a></li>
-                <li><a href="jcb-excavator-rock-breakers-rent-questions.php" title="FAQ">FAQ</a></li>
-                <li><a href="earth-movers-equipment-rentals.php" title="Contact Us">Contact Us</a></li>
-                <li><a href="earth-work-service-enquiry.php" title="Enquiry">Enquiry</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-3">
-            <div class="sigma_footer-widget">
-              <h5 class="widget-title" title="Our Services">Our Services</h5>
-              <ul class="sigma_footer-links">
-                <li><a href="jcb-rental-services-coimbatore.php" title="JCB Rental">JCB Rental</a></li>
-                <li><a href="best-jcb-rock-breaker-rental-service.php" title="JCB Breaker Rental">JCB Breaker Rental</a></li>
-                <li><a href="hitachi-excavator-rental-service-coimbatore.php" title="Hitachi Excavator Rental">Hitachi Excavator Rental</a></li>
-                <li><a href="excavator-rock-breaker-machine-rental.php" title="Hitachi Rock Breaker Rental">Hitachi Rock Breaker Rental</a></li>
-                <li><a href="mini-road-roller-rental-coimbatore.php" title="Mini Road Roller Rental">Mini Road Roller Rental</a></li>
-                <li><a href="soil-compactor-road-roller-hiring-rental.php" title="Soil Compactor Road Roller Rental">Soil Compactor Road Roller Rental</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="sigma_footer-widget">
-              <h5 class="widget-title">Our Services</h5>
-              <ul class="sigma_footer-links">
-                <li><a href="bobcat-skid-steer-loader-rental-coimbatore.php" title="Bobcat Rental">Bobcat Rental</a></li>
-                <li><a href="tipper-tractor-vehicle-rental-coimbatore.php" title="Tipper & Tractor Rental">Tipper & Tractor Rental</a></li>
-                <li><a href="building-demolition-contractors-coimbatore.php" title="Building Demolition Work">Building Demolition Work</a></li>
-                <li><a href="site-grading-levelling-footing-coimbatore.php" title="Mass Excavation Rental Work">Mass Excavation Rental Work</a></li>
-                <li><a href="site-grading-levelling-footing-coimbatore.php" title="Footing Excavation Work">Footing Excavation Work</a></li>
-                <li><a href="top-mini-excavator-hire-near-coimbatore.php" title="Mini Hitachi Excavator Rental">Mini Hitachi Excavator Rental</a></li>
-                <li><a href="hire-mini-excavator-hydraulic-hammers-rental.php" title="Mini Hitachi Rock Breaker Rental">Mini Hitachi Rock Breaker Rental</a></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="col-12">
-            <div class="sigma_info-wrapper">
-              <div class="sigma_info style-18">
-                <div class="sigma_info-title">
-                  <span class="sigma_info-icon"><i class="fal fa-address-book"></i></span>
-                </div>
-                <div class="sigma_info-description">
-                  <p>506/A2, Sulur Railway Feeder Road,</p>
-                  <p>Kurupalayam, Sulur,</p>
-                  <p>Coimbatore - 641402,</p>
-                  <p>Tamilnadu, South India.</p>
-                </div>
-              </div>
-              <div class="sigma_info style-18 mtb-5">
-                <div class="sigma_info-title">
-                  <span class="sigma_info-icon"><i class="fal fa-mail-bulk"></i></span>
-                </div>
-                <div class="sigma_info-description">
-                  <p><a href="mailto:info@snaearthmover.com">info@snaearthmover.com</a></p>
-                </div>
-              </div>
-              <div class="sigma_info style-18 mtb-5">
-                <div class="sigma_info-title">
-                  <span class="sigma_info-icon"><i class="fal fa-phone"></i></span>
-                </div>
-                <div class="sigma_info-description">
-                  <p><a href="tel:+919629408999">+91 96294 08999</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="contact-section">
+  <h3>Talk To Our Experts</h3>
+  <form>
+    <input type="text" name="name" placeholder="Enter Your Name" required />
+    <input type="email" name="email" placeholder="Enter Your Email" required />
+    <input type="tel" name="phone" maxlength="10" placeholder="Enter Phone Number" required />
+    <button type="submit">Get A Callback</button>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-widgets">
+    <div class="widget">
+      <img src="https://www.snaearthmover.com/assets/images/sna-logo.webp" alt="SNA Earth Movers" style="height: 60px; margin-bottom: 10px;">
+      <p>506/A2, Sulur Railway Feeder Road,<br>Kurupalayam, Sulur,<br>Coimbatore - 641402,<br>Tamilnadu, South India.</p>
+      <p>Email: <a href="mailto:info@snaearthmover.com">info@snaearthmover.com</a></p>
+      <p>Phone: <a href="tel:+919629408999">+91 96294 08999</a></p>
     </div>
-    <div class="container">
-      <div class="sigma_footer-bottom d-block d-sm-flex align-items-center justify-content-between">
-        <div class="sigma_footer-copyright mt-0 mb-3 mb-sm-0">
-          <p class="mb-0">Copyright © 2025 SNA Earth Movers. All Rights Reserved. <a style="color: #4caf50;" href="https://www.xcodefix.com/" title="Website Designed By Xcodefix">Website Designed By Xcodefix</a></p>
-          <p><a href="privacy_policy.php">Privacy Policy</a></p>
-        </div>
-      </div>
+
+    <div class="widget">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Enquiry</a></li>
+      </ul>
     </div>
-  </footer>
 
-</div>
-
-<!-- Side Icons (WhatsApp & Phone) -->
-<div class="side-icons">
-  <div class="inner-side-icon">
-    <a class="rot" href="https://wa.me/+919629408999?text=Hello SNA Earth Movers, I need Your Services" target="_blank"><i class="fab fa-whatsapp" style="font-size: 48px; color: #25D366;"></i></a>
+    <div class="widget social-icons">
+      <h5>Follow Us</h5>
+      <ul>
+        <li><a href="#" aria-label="Facebook" title="Facebook">&#xf09a;</a></li>
+        <li><a href="#" aria-label="Twitter" title="Twitter">&#xf099;</a></li>
+        <li><a href="#" aria-label="Instagram" title="Instagram">&#xf16d;</a></li>
+      </ul>
+    </div>
   </div>
-  <div class="inner-side-icon">
-    <a class="rot" href="tel:+919629408999"><i class="fa fa-phone" style="font-size: 38px; color: #fcdf29;"></i></a>
-  </div>
-</div>
+  <div class="copyright">&copy; 2025 SNA Earth Movers. All Rights Reserved.</div>
+</footer>
 
-<!-- JS Scripts -->
-<script src="assets/js/jquery.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sticksy@latest/dist/sticksy.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script type="module" src="assets/js/bootstrap-select.min.js"></script>
-<script src="assets/js/jquery.fancybox.js"></script>
-<script src="assets/js/isotope.js"></script>
-<script src="assets/js/owl.js"></script>
-<script src="assets/js/appear.js"></script>
-<script src="assets/js/wow.js"></script>
-<script src="assets/js/lazyload.js"></script>
-<script src="assets/js/scrollbar.js"></script>
-<script src="assets/js/TweenMax.min.js"></script>
-<script src="assets/js/swiper.min.js"></script>
-<script src="assets/js/jquery.polyglot.language.switcher.js"></script>
-<script src="assets/js/jquery.ajaxchimp.min.js"></script>
-<script src="assets/js/parallax-scroll.js"></script>
-<script src="assets/js/script.js"></script>
+<button id="scrollToTopBtn" title="Scroll to top">&uarr;</button>
 
-<!-- Google Tag Manager -->
 <script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PL776B4');
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+  });
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollToTopBtn');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
+
+<!-- Using FontAwesome via CDN for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
 </body>
 </html>
