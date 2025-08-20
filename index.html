@@ -1,749 +1,257 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Love for You, My Angel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a0a1c, #2d0f2d, #3f143f);
-            color: #f8f8f8;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1000px;
-            background: rgba(20, 5, 25, 0.85);
-            border-radius: 25px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
-            position: relative;
-            overflow: hidden;
-            padding: 40px 30px;
-            border: 2px solid rgba(255, 102, 179, 0.3);
-            z-index: 10;
-            background-image: url('https://images.unsplash.com/photo-1516487200032-8532cb603261?q=80&w=1974');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
-        }
-        
-        .container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(30, 5, 35, 0.8);
-            z-index: -1;
-            border-radius: 25px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 4.5rem;
-            color: #ffd0e9;
-            margin-bottom: 20px;
-            text-shadow: 0 0 20px rgba(255, 0, 119, 0.7);
-            animation: fadeIn 2s;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            color: #ffa8d9;
-            margin-bottom: 30px;
-            animation: fadeIn 2.5s;
-        }
-        
-        .heart {
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: #ffa8d9;
-            transform: rotate(45deg);
-            animation: float 6s infinite ease-in-out;
-            opacity: 0.8;
-            z-index: 1;
-        }
-        
-        .heart:before, .heart:after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background-color: #ffa8d9;
-            border-radius: 50%;
-        }
-        
-        .heart:before {
-            top: -12px;
-            left: 0;
-        }
-        
-        .heart:after {
-            top: 0;
-            left: -12px;
-        }
-        
-        .heart1 { top: 10%; left: 10%; animation-delay: 0s; }
-        .heart2 { top: 20%; right: 15%; animation-delay: 1.5s; }
-        .heart3 { bottom: 15%; left: 20%; animation-delay: 3s; }
-        .heart4 { bottom: 25%; right: 10%; animation-delay: 4.5s; }
-        
-        @keyframes float {
-            0%, 100% { transform: rotate(45deg) translateY(0) scale(1); }
-            50% { transform: rotate(45deg) translateY(-20px) scale(1.1); }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .love-box {
-            background: rgba(70, 20, 50, 0.6);
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(255, 102, 179, 0.4);
-            position: relative;
-            z-index: 2;
-            transition: transform 0.3s;
-        }
-        
-        .love-box:hover {
-            transform: translateY(-5px);
-        }
-        
-        .box-title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.2rem;
-            color: #ffd0e9;
-            margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(255, 0, 119, 0.5);
-        }
-        
-        .message {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #ffeff7;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .virtual-hug {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-        }
-        
-        .hug-button {
-            background: linear-gradient(135deg, #ff3399, #ff0066);
-            color: white;
-            border: none;
-            padding: 18px 45px;
-            font-size: 1.3rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: pulse 2s infinite;
-            box-shadow: 0 5px 20px rgba(255, 51, 153, 0.6);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            margin-top: 20px;
-        }
-        
-        .hug-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(255, 51, 153, 0.8);
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 51, 153, 0.7); }
-            70% { box-shadow: 0 0 0 18px rgba(255, 51, 153, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 51, 153, 0); }
-        }
-        
-        .hug-animation {
-            font-size: 5rem;
-            margin-bottom: 20px;
-            display: none;
-        }
-        
-        .hug-message {
-            font-size: 1.5rem;
-            text-align: center;
-            display: none;
-            color: #ffd0e9;
-            font-weight: 600;
-        }
-        
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .countdown-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgba(255, 0, 119, 0.2);
-            padding: 15px;
-            border-radius: 15px;
-            min-width: 80px;
-        }
-        
-        .countdown-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffd0e9;
-        }
-        
-        .countdown-label {
-            font-size: 0.9rem;
-            color: #ffa8d9;
-        }
-        
-        .memory-section {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .memories {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .memory-item {
-            width: 150px;
-            height: 150px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s;
-            background: linear-gradient(135deg, #ff3399, #ff0066);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-        
-        .memory-item:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-        
-        .affirmations {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .affirmation {
-            background: rgba(255, 102, 179, 0.3);
-            padding: 15px;
-            border-radius: 15px;
-            width: 100%;
-            text-align: center;
-            font-style: italic;
-            color: #ffeff7;
-            animation: fadeIn 1s;
-            display: none;
-        }
-        
-        .affirmation.active {
-            display: block;
-        }
-        
-        .affirm-btn {
-            background: rgba(255, 102, 179, 0.5);
-            border: none;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .affirm-btn:hover {
-            background: rgba(255, 102, 179, 0.7);
-        }
-        
-        .thought-form {
-            grid-column: 1 / -1;
-            background: rgba(50, 10, 40, 0.7);
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 20px;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 600;
-            color: #ffd0e9;
-            font-size: 1.1rem;
-            padding-left: 10px;
-            text-shadow: 0 0 8px rgba(255, 0, 119, 0.5);
-        }
-        
-        .text-box {
-            background-color: rgba(30, 10, 30, 0.7);
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
-            border: 2px solid rgba(255, 102, 179, 0.5);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        textarea {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: all 0.3s;
-            background-color: transparent;
-            resize: vertical;
-            min-height: 120px;
-            position: relative;
-            z-index: 1;
-            color: #ffeff7;
-            text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
-        }
-        
-        textarea::placeholder {
-            color: #ffb3d9;
-            opacity: 0.9;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(135deg, #ff3399, #ff0066);
-            color: white;
-            border: none;
-            padding: 16px 35px;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            animation: pulse 2s infinite;
-            box-shadow: 0 5px 20px rgba(255, 51, 153, 0.6);
-            display: block;
-            margin: 20px auto 0;
-            position: relative;
-            overflow: hidden;
-            z-index: 2;
-            width: 100%;
-            max-width: 300px;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(255, 51, 153, 0.8);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #ffa8d9;
-            font-size: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .korean-love {
-            font-size: 3rem;
-            display: block;
-            margin: 10px 0;
-            animation: loveAnimation 2.5s infinite ease-in-out;
-        }
-        
-        @keyframes loveAnimation {
-            0%, 100% { 
-                transform: scale(1) rotate(0deg); 
-                color: #ffd0e9;
-            }
-            20% { 
-                transform: scale(1.2) rotate(-15deg); 
-                color: #ffa8d9;
-            }
-            40% { 
-                transform: scale(1.3) rotate(5deg); 
-                color: #ff80bf;
-            }
-            60% { 
-                transform: scale(1.2) rotate(15deg); 
-                color: #ffa8d9;
-            }
-            80% { 
-                transform: scale(1.1) rotate(-5deg); 
-                color: #ffd0e9;
-            }
-        }
-        
-        /* Background decorations */
-        .bg-decoration {
-            position: fixed;
-            z-index: 0;
-            opacity: 0.1;
-            font-size: 300px;
-            animation: floatBg 20s infinite linear;
-            color: #ffd0e9;
-            filter: blur(2px);
-        }
-        
-        @keyframes floatBg {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-100px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
-        }
-        
-        .bg-1 { top: 5%; left: 5%; animation-duration: 25s; }
-        .bg-2 { top: 15%; right: 10%; animation-duration: 30s; }
-        .bg-3 { bottom: 10%; left: 15%; animation-duration: 35s; }
-        .bg-4 { bottom: 20%; right: 5%; animation-duration: 40s; }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .love-box {
-                padding: 20px;
-            }
-            
-            .box-title {
-                font-size: 1.8rem;
-            }
-            
-            .countdown-item {
-                min-width: 70px;
-                padding: 10px;
-            }
-            
-            .countdown-number {
-                font-size: 1.5rem;
-            }
-            
-            .memory-item {
-                width: 120px;
-                height: 120px;
-                font-size: 1.5rem;
-            }
-            
-            .bg-decoration {
-                font-size: 200px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .countdown {
-                gap: 10px;
-            }
-            
-            .countdown-item {
-                min-width: 60px;
-                padding: 8px;
-            }
-            
-            .countdown-number {
-                font-size: 1.3rem;
-            }
-            
-            .memory-item {
-                width: 100px;
-                height: 100px;
-                font-size: 1.2rem;
-            }
-            
-            .bg-decoration {
-                font-size: 150px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siva Sakthi Earth Movers - Heavy Machinery Services Tamil Nadu and Karnataka</title>
+  <meta name="description" content="Professional earth moving services in Tamil Nadu. JCB rental, excavation, site clearance, road work. Trusted by builders and contractors across Tamil Nadu.">
+  <meta name="keywords" content="Earth Movers Tamil Nadu, JCB Rental, Construction site leveling services, Excavation services, Heavy machinery rental">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background decorations -->
-    <div class="bg-decoration bg-1">🫰</div>
-    <div class="bg-decoration bg-2">🫶</div>
-    <div class="bg-decoration bg-3">🤌</div>
-    <div class="bg-decoration bg-4">🤝</div>
-    
-    <div class="container">
-        <!-- Floating hearts -->
-        <div class="heart heart1"></div>
-        <div class="heart heart2"></div>
-        <div class="heart heart3"></div>
-        <div class="heart heart4"></div>
-        
-        <header>
-            <h1>My Dearest Angel</h1>
-            <p class="subtitle">Even across the miles, my love for you grows stronger every day</p>
-        </header>
-        
-        <div class="main-content">
-            <div class="love-box">
-                <h2 class="box-title">My Promise</h2>
-                <p class="message">My love, no matter how far apart we are, I'm always with you in spirit. When you feel lonely, remember how much I cherish you. When you feel weak, remember how strong you are. When you feel lost, remember I'm your guiding star. I love you more than words can express.</p>
-            </div>
-            
-            <div class="love-box virtual-hug">
-                <h2 class="box-title">Virtual Hug</h2>
-                <p class="message">I wish I could be there to hold you right now. Until I can, please accept this virtual hug from me.</p>
-                <button class="hug-button" id="hugBtn">Send Hug</button>
-                <div class="hug-animation" id="hugAnimation">🫂</div>
-                <p class="hug-message" id="hugMessage">Feel my arms around you, my love. You're not alone.</p>
-            </div>
-            
-            <div class="love-box">
-                <h2 class="box-title">Our Next Meeting</h2>
-                <p class="message">Counting down the moments until I can hold you in my arms again:</p>
-                <div class="countdown">
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="days">45</span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="hours">12</span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="minutes">28</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-number" id="seconds">15</span>
-                        <span class="countdown-label">Seconds</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="love-box">
-                <h2 class="box-title">Daily Affirmation</h2>
-                <p class="message">Click the button below for a special message from my heart to yours:</p>
-                <div class="affirmations">
-                    <button class="affirm-btn" id="affirmBtn">Show Affirmation</button>
-                    <div class="affirmation" id="affirmation1">You are stronger than you think, and more loved than you know.</div>
-                    <div class="affirmation" id="affirmation2">Every moment without you is just a step closer to being together again.</div>
-                    <div class="affirmation" id="affirmation3">Your smile is my favorite sight in the world, even through pictures.</div>
-                    <div class="affirmation" id="affirmation4">I may not be there physically, but my heart is always with you.</div>
-                </div>
-            </div>
-            
-            <div class="memory-section">
-                <h2 class="box-title">Our Precious Memories</h2>
-                <p class="message">Remembering beautiful moments we've shared together:</p>
-                <div class="memories">
-                    <div class="memory-item">💑</div>
-                    <div class="memory-item">🌅</div>
-                    <div class="memory-item">🎉</div>
-                    <div class="memory-item">🍽️</div>
-                    <div class="memory-item">🎬</div>
-                </div>
-            </div>
-            
-            <div class="thought-form">
-                <h2 class="box-title">Share Your Thoughts With Me</h2>
-                <p class="message">I'm always here for you, my love. Share anything that's on your heart:</p>
-                
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="problem">What's on your mind, my love?</label>
-                        <div class="text-box">
-                            <textarea id="problem" name="problem" required placeholder="Tell me everything..."></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="solution">How can I help you feel better?</label>
-                        <div class="text-box">
-                            <textarea id="solution" name="solution" placeholder="Your wish is my command..."></textarea>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send to Your Love</button>
-                </form>
-            </div>
-        </div>
-        
-        <footer>
-            <p>Made with <span class="korean-love">🫰</span> for my one and only</p>
-            <p>Distance means so little when someone means so much</p>
-        </footer>
-    </div>
 
-    <script>
-        // Virtual hug functionality
-        const hugBtn = document.getElementById('hugBtn');
-        const hugAnimation = document.getElementById('hugAnimation');
-        const hugMessage = document.getElementById('hugMessage');
-        
-        hugBtn.addEventListener('click', function() {
-            hugBtn.style.display = 'none';
-            hugAnimation.style.display = 'block';
-            hugMessage.style.display = 'block';
-            
-            // Add heartbeat effect
-            document.body.style.animation = 'heartbeat 1s';
-            setTimeout(() => {
-                document.body.style.animation = '';
-            }, 1000);
-        });
-        
-        // Affirmations functionality
-        const affirmBtn = document.getElementById('affirmBtn');
-        const affirmations = document.querySelectorAll('.affirmation');
-        let currentAffirm = 0;
-        
-        affirmBtn.addEventListener('click', function() {
-            // Hide current affirmation
-            affirmations.forEach(a => a.classList.remove('active'));
-            
-            // Show next affirmation
-            currentAffirm = (currentAffirm + 1) % affirmations.length;
-            affirmations[currentAffirm].classList.add('active');
-            
-            // Change button text
-            affirmBtn.textContent = 'Another Affirmation';
-        });
-        
-        // Countdown timer (example date - replace with your next meeting date)
-        function updateCountdown() {
-            const targetDate = new Date('2024-12-25T00:00:00');
-            const now = new Date();
-            const diff = targetDate - now;
-            
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-        
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            
-            // Show sending state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            
-            // Simulate sending
-            setTimeout(() => {
-                // Reset form
-                document.getElementById('problem').value = '';
-                document.getElementById('solution').value = '';
-                
-                // Show success
-                submitBtn.textContent = 'Sent with Love! 💌';
-                submitBtn.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
-                
-                // Reset after delay
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.background = 'linear-gradient(135deg, #ff3399, #ff0066)';
-                }, 3000);
-            }, 1500);
-        });
-        
-        // Add heartbeat animation to CSS
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes heartbeat {
-                0% { transform: scale(1); }
-                25% { transform: scale(1.05); }
-                50% { transform: scale(1); }
-                75% { transform: scale(1.05); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="images/sakthi logo.jpeg" alt="Siva Sakthi Logo">
+        <span>Siva Sakthi Earth Movers</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Projects</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Siva Sakthi Earth Movers</h1>
+        <p class="tagline">Strong Foundations Start with Siva Sakthi</p>
+        <p class="hero-description">
+          Trusted partner for all heavy machinery and earth moving services across 
+          <strong>Karnataka</strong> and <strong>Tamil Nadu</strong>. 
+          From excavation to site development, we deliver excellence with every project.
+        </p>
+        <a href="#contact" class="cta-button">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <div>
+          <p class="about-text">
+            With years of experience serving the construction industry in <strong>Karnataka</strong> 
+            and <strong>Tamil Nadu</strong>, Siva Sakthi Earth Movers has built a reputation for 
+            reliability, quality, and professional service. Our skilled team operates modern heavy 
+            machinery to deliver precise, efficient solutions for projects of all sizes.
+          </p>
+          <p class="about-text">
+            From small residential developments to large government projects, we bring the same 
+            commitment to excellence, punctuality, and customer satisfaction. Our deep understanding 
+            of local terrain and construction needs makes us the preferred choice for builders and 
+            contractors across both states.
+          </p>
+        </div>
+        <div class="about-features">
+          <div class="feature">
+            <i class="fas fa-award"></i>
+            <h3>Quality Service</h3>
+            <p>Uncompromising standards in every project we undertake</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-clock"></i>
+            <h3>Punctuality</h3>
+            <p>On-time delivery and completion of all contracted work</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-handshake"></i>
+            <h3>Trust</h3>
+            <p>Building lasting relationships through honest business practices</p>
+          </div>
+          <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Experience</h3>
+            <p>Seasoned professionals with extensive local knowledge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-industry"></i></div>
+          <div class="service-content">
+            <h3>Excavation</h3>
+            <p>Professional excavation services for construction sites, foundation works, and road development.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mountain"></i></div>
+          <div class="service-content">
+            <h3>Earth Leveling</h3>
+            <p>Accurate site leveling and grading for residential, commercial, and industrial projects.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck-monster"></i></div>
+          <div class="service-content">
+            <h3>JCB & Bulldozer Rental</h3>
+            <p>Well-maintained heavy machinery with skilled operators available for hire.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-trash"></i></div>
+          <div class="service-content">
+            <h3>Site Clearance</h3>
+            <p>Safe and efficient removal of debris, vegetation, and unwanted materials from construction sites.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-road"></i></div>
+          <div class="service-content">
+            <h3>Road Work</h3>
+            <p>Comprehensive road construction support, from preparation to finishing works.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-hammer"></i></div>
+          <div class="service-content">
+            <h3>Rock Breaking</h3>
+            <p>Specialized equipment and operators for rock cutting and breaking in tough terrains.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Projects</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/Excavation.jpeg" alt="Excavation Project"></div>
+        <div class="gallery-item"><img src="images/River.jpeg" alt="Site Leveling Project"></div>
+        <div class="gallery-item"><img src="images/Road work.jpeg" alt="Road Work Project"></div>
+        <div class="gallery-item"><img src="images/Bulldozer.jpeg" alt="Bulldozer Service"></div>
+        <div class="gallery-item"><img src="images/Rock breaking.jpeg" alt="Rock Breaking Project"></div>
+        <div class="gallery-item"><img src="images/site clearance.jpeg" alt="Site Clearance Project"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section id="clients" class="section">
+    <div class="container">
+      <h2 class="section-title">Our Clients & Projects</h2>
+      <div class="clients-scroller">
+        <div class="client-square"><h3>Tata Coffee Limited</h3><p>Pond Work</p></div>
+        <div class="client-square"><h3>Agro Foundations</h3><p>Tie-up with Asian Paints, Vandhavaasi</p></div>
+        <div class="client-square"><h3>Private Works</h3><p>Construction · Foundation · Earthwork</p></div>
+        <div class="client-square"><h3>BCK Plantation</h3><p>Earthwork & Machinery</p></div>
+        <div class="client-square"><h3>Panchayat Works</h3><p>Gonikoppa, Kodagu — River Work</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xqalvgew" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="_replyto" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service">
+              <option value="">Select a Service</option>
+              <option value="excavation">Excavation</option>
+              <option value="earth-leveling">Earth Leveling</option>
+              <option value="jcb-rental">JCB/Bulldozer Rental</option>
+              <option value="site-clearance">Site Clearance</option>
+              <option value="road-work">Road Work</option>
+              <option value="rock-breaking">Rock Breaking</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Project Details</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="cta-button">Send Inquiry</button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-user"></i><span>Rajesh KS</span></div>
+        <div class="contact-item"><i class="fas fa-phone"></i><span><a href="tel:+919448704494">+91 94487 04494</a> / <a href="tel:+919148828458">+91 91488 28458</a></span></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:rajeshks17th@gmail.com">rajeshks17th@gmail.com</a></span></div>
+        <div class="contact-item"><i class="fas fa-file-invoice"></i><span>GST: 29BESPR9520K3ZH</span></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Vestpuri Complex, Near Govt Hospital, Mysore Road, Gonikoppal - 571 213</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">© 2025 Siva Sakthi Earth Movers. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919448704494" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
+
+  <!-- JS for Hamburger Menu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mobileMenu = document.querySelector('.mobile-menu');
+      const navLinks = document.querySelector('.nav-links');
+
+      mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
