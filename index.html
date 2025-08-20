@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +9,268 @@
   
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* General Theme - Earthy tones */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f2e9; /* light tan */
+      color: #2e2b26; /* dark earthy brown */
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #3e3b31; /* deep earthy brown */
+      color: #f5f2e9;
+      padding: 10px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    nav .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav .nav-links li a {
+      color: #f5f2e9;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav .nav-links li a:hover {
+      color: #d4c9a9;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .mobile-menu span {
+      background: #fff;
+      margin: 4px 0;
+      height: 3px;
+      width: 25px;
+    }
+
+    .hero {
+      background: url('images/Excavation.jpeg') no-repeat center center/cover;
+      color: #fff;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #4b6b47;
+      color: #fff;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #2e462d;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      color: #3e3b31;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .about-text {
+      margin-bottom: 15px;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .feature {
+      background: #e6ddc6;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #e6ddc6;
+      border: 2px solid #b89f6b;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #4b6b47;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Clients Section - 3D Cylinder */
+    .clients-scroller {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      perspective: 1200px;
+      transform-style: preserve-3d;
+      animation: spinClients 25s linear infinite;
+    }
+
+    .clients-scroller .client-square {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 220px;
+      height: 120px;
+      margin: -60px -110px;
+      background: #e6ddc6;
+      border: 2px solid #b89f6b;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(46, 43, 38, 0.3);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Position on circle */
+    .clients-scroller .client-square:nth-child(1) { transform: rotateY(0deg) translateZ(450px); }
+    .clients-scroller .client-square:nth-child(2) { transform: rotateY(72deg) translateZ(450px); }
+    .clients-scroller .client-square:nth-child(3) { transform: rotateY(144deg) translateZ(450px); }
+    .clients-scroller .client-square:nth-child(4) { transform: rotateY(216deg) translateZ(450px); }
+    .clients-scroller .client-square:nth-child(5) { transform: rotateY(288deg) translateZ(450px); }
+
+    /* Hover zoom */
+    .clients-scroller .client-square:hover {
+      transform: scale(1.15) translateZ(50px);
+      box-shadow: 0 8px 20px rgba(46, 43, 38, 0.5);
+      z-index: 10;
+    }
+
+    @keyframes spinClients {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(-360deg); }
+    }
+
+    /* Contact */
+    .contact-form, .contact-info {
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #b89f6b;
+      border-radius: 8px;
+    }
+
+    .contact-info .contact-item {
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .footer-bottom {
+      padding: 10px 0;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: #fff;
+      font-size: 2rem;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,221 +290,112 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </div>
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Siva Sakthi Earth Movers</h1>
-        <p class="tagline">Strong Foundations Start with Siva Sakthi</p>
-        <p class="hero-description">
-          Trusted partner for all heavy machinery and earth moving services across 
-          <strong>Karnataka</strong> and <strong>Tamil Nadu</strong>. 
-          From excavation to site development, we deliver excellence with every project.
-        </p>
-        <a href="#contact" class="cta-button">Request a Quote</a>
-      </div>
-    </div>
+    <h1>Siva Sakthi Earth Movers</h1>
+    <p class="tagline">Strong Foundations Start with Siva Sakthi</p>
+    <p>Trusted partner for heavy machinery and earth moving services across Karnataka and Tamil Nadu.</p>
+    <a href="#contact" class="cta-button">Request a Quote</a>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <div class="about-content">
-        <div>
-          <p class="about-text">
-            With years of experience serving the construction industry in <strong>Karnataka</strong> 
-            and <strong>Tamil Nadu</strong>, Siva Sakthi Earth Movers has built a reputation for 
-            reliability, quality, and professional service. Our skilled team operates modern heavy 
-            machinery to deliver precise, efficient solutions for projects of all sizes.
-          </p>
-          <p class="about-text">
-            From small residential developments to large government projects, we bring the same 
-            commitment to excellence, punctuality, and customer satisfaction. Our deep understanding 
-            of local terrain and construction needs makes us the preferred choice for builders and 
-            contractors across both states.
-          </p>
-        </div>
-        <div class="about-features">
-          <div class="feature">
-            <i class="fas fa-award"></i>
-            <h3>Quality Service</h3>
-            <p>Uncompromising standards in every project we undertake</p>
-          </div>
-          <div class="feature">
-            <i class="fas fa-clock"></i>
-            <h3>Punctuality</h3>
-            <p>On-time delivery and completion of all contracted work</p>
-          </div>
-          <div class="feature">
-            <i class="fas fa-handshake"></i>
-            <h3>Trust</h3>
-            <p>Building lasting relationships through honest business practices</p>
-          </div>
-          <div class="feature">
-            <i class="fas fa-users"></i>
-            <h3>Experience</h3>
-            <p>Seasoned professionals with extensive local knowledge</p>
-          </div>
-        </div>
+    <h2 class="section-title">About Us</h2>
+    <div class="about-content">
+      <div>
+        <p class="about-text">With years of experience serving the construction industry, Siva Sakthi Earth Movers is known for reliability, quality, and professionalism.</p>
+        <p class="about-text">We handle projects of all sizes across Karnataka and Tamil Nadu with punctuality and customer satisfaction.</p>
+      </div>
+      <div class="about-features">
+        <div class="feature"><i class="fas fa-award"></i><h3>Quality Service</h3></div>
+        <div class="feature"><i class="fas fa-clock"></i><h3>Punctuality</h3></div>
+        <div class="feature"><i class="fas fa-handshake"></i><h3>Trust</h3></div>
+        <div class="feature"><i class="fas fa-users"></i><h3>Experience</h3></div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- Services -->
   <section id="services" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-industry"></i></div>
-          <div class="service-content">
-            <h3>Excavation</h3>
-            <p>Professional excavation services for construction sites, foundation works, and road development.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-mountain"></i></div>
-          <div class="service-content">
-            <h3>Earth Leveling</h3>
-            <p>Accurate site leveling and grading for residential, commercial, and industrial projects.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-truck-monster"></i></div>
-          <div class="service-content">
-            <h3>JCB & Bulldozer Rental</h3>
-            <p>Well-maintained heavy machinery with skilled operators available for hire.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-trash"></i></div>
-          <div class="service-content">
-            <h3>Site Clearance</h3>
-            <p>Safe and efficient removal of debris, vegetation, and unwanted materials from construction sites.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-road"></i></div>
-          <div class="service-content">
-            <h3>Road Work</h3>
-            <p>Comprehensive road construction support, from preparation to finishing works.</p>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon"><i class="fas fa-hammer"></i></div>
-          <div class="service-content">
-            <h3>Rock Breaking</h3>
-            <p>Specialized equipment and operators for rock cutting and breaking in tough terrains.</p>
-          </div>
-        </div>
-      </div>
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><i class="fas fa-industry"></i></div><h3>Excavation</h3></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-mountain"></i></div><h3>Earth Leveling</h3></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-truck-monster"></i></div><h3>JCB & Bulldozer Rental</h3></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-trash"></i></div><h3>Site Clearance</h3></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-road"></i></div><h3>Road Work</h3></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-hammer"></i></div><h3>Rock Breaking</h3></div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
+  <!-- Gallery -->
   <section id="gallery" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Projects</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item"><img src="images/Excavation.jpeg" alt="Excavation Project"></div>
-        <div class="gallery-item"><img src="images/River.jpeg" alt="Site Leveling Project"></div>
-        <div class="gallery-item"><img src="images/Road work.jpeg" alt="Road Work Project"></div>
-        <div class="gallery-item"><img src="images/Bulldozer.jpeg" alt="Bulldozer Service"></div>
-        <div class="gallery-item"><img src="images/Rock breaking.jpeg" alt="Rock Breaking Project"></div>
-        <div class="gallery-item"><img src="images/site clearance.jpeg" alt="Site Clearance Project"></div>
-      </div>
+    <h2 class="section-title">Our Projects</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/Excavation.jpeg" alt="Excavation"></div>
+      <div class="gallery-item"><img src="images/River.jpeg" alt="River Work"></div>
+      <div class="gallery-item"><img src="images/Road work.jpeg" alt="Road Work"></div>
+      <div class="gallery-item"><img src="images/Bulldozer.jpeg" alt="Bulldozer"></div>
+      <div class="gallery-item"><img src="images/Rock breaking.jpeg" alt="Rock Breaking"></div>
+      <div class="gallery-item"><img src="images/site clearance.jpeg" alt="Site Clearance"></div>
     </div>
   </section>
 
-  <!-- Clients Section -->
+  <!-- Clients -->
   <section id="clients" class="section">
-    <div class="container">
-      <h2 class="section-title">Our Clients & Projects</h2>
-      <div class="clients-scroller">
-        <div class="client-square"><h3>Tata Coffee Limited</h3><p>Pond Work</p></div>
-        <div class="client-square"><h3>Agro Foundations</h3><p>Tie-up with Asian Paints, Vandhavaasi</p></div>
-        <div class="client-square"><h3>Private Works</h3><p>Construction · Foundation · Earthwork</p></div>
-        <div class="client-square"><h3>BCK Plantation</h3><p>Earthwork & Machinery</p></div>
-        <div class="client-square"><h3>Panchayat Works</h3><p>Gonikoppa, Kodagu — River Work</p></div>
-      </div>
+    <h2 class="section-title">Our Clients & Projects</h2>
+    <div class="clients-scroller">
+      <div class="client-square"><h3>Tata Coffee Limited</h3><p>Pond Work</p></div>
+      <div class="client-square"><h3>Agro Foundations</h3><p>Asian Paints Tie-up</p></div>
+      <div class="client-square"><h3>Private Works</h3><p>Construction · Foundation</p></div>
+      <div class="client-square"><h3>BCK Plantation</h3><p>Earthwork & Machinery</p></div>
+      <div class="client-square"><h3>Panchayat Works</h3><p>River Work, Kodagu</p></div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact" class="section">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <form action="https://formspree.io/f/xqalvgew" method="POST">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="_replyto" required>
-          </div>
-          <div class="form-group">
-            <label for="service">Service Required</label>
-            <select id="service" name="service">
-              <option value="">Select a Service</option>
-              <option value="excavation">Excavation</option>
-              <option value="earth-leveling">Earth Leveling</option>
-              <option value="jcb-rental">JCB/Bulldozer Rental</option>
-              <option value="site-clearance">Site Clearance</option>
-              <option value="road-work">Road Work</option>
-              <option value="rock-breaking">Rock Breaking</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Project Details</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="cta-button">Send Inquiry</button>
-        </form>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="contact-info">
-        <div class="contact-item"><i class="fas fa-user"></i><span>Rajesh KS</span></div>
-        <div class="contact-item"><i class="fas fa-phone"></i><span><a href="tel:+919448704494">+91 94487 04494</a> / <a href="tel:+919148828458">+91 91488 28458</a></span></div>
-        <div class="contact-item"><i class="fas fa-envelope"></i><span><a href="mailto:rajeshks17th@gmail.com">rajeshks17th@gmail.com</a></span></div>
-        <div class="contact-item"><i class="fas fa-file-invoice"></i><span>GST: 29BESPR9520K3ZH</span></div>
-        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Vestpuri Complex, Near Govt Hospital, Mysore Road, Gonikoppal - 571 213</span></div>
-      </div>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-form">
+      <form action="https://formspree.io/f/xqalvgew" method="POST">
+        <div class="form-group"><label>Name</label><input type="text" name="name" required></div>
+        <div class="form-group"><label>Phone</label><input type="tel" name="phone" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="_replyto" required></div>
+        <div class="form-group"><label>Service</label>
+          <select name="service">
+            <option value="">Select</option><option>Excavation</option><option>Earth Leveling</option><option>JCB Rental</option><option>Site Clearance</option><option>Road Work</option><option>Rock Breaking</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Project Details</label><textarea name="message" rows="5" required></textarea></div>
+        <button type="submit" class="cta-button">Send Inquiry</button>
+      </form>
+    </div>
+    <div class="contact-info">
+      <div class="contact-item"><i class="fas fa-user"></i> Rajesh KS</div>
+      <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:+919448704494">+91 94487 04494</a> / <a href="tel:+919148828458">+91 91488 28458</a></div>
+      <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:rajeshks17th@gmail.com">rajeshks17th@gmail.com</a></div>
+      <div class="contact-item"><i class="fas fa-file-invoice"></i> GST: 29BESPR9520K3ZH</div>
+      <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Vestpuri Complex, Mysore Road, Gonikoppal</div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-bottom">© 2025 Siva Sakthi Earth Movers. All rights reserved.</div>
-    </div>
+    <div class="footer-bottom">© 2025 Siva Sakthi Earth Movers. All rights reserved.</div>
   </footer>
 
   <!-- WhatsApp Button -->
   <a href="https://wa.me/919448704494" class="whatsapp-float"><i class="fab fa-whatsapp"></i></a>
 
-  <!-- JS for Hamburger Menu -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const mobileMenu = document.querySelector('.mobile-menu');
       const navLinks = document.querySelector('.nav-links');
-
       mobileMenu.addEventListener('click', () => {
         navLinks.classList.toggle('active');
         mobileMenu.classList.toggle('open');
